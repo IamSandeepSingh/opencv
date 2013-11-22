@@ -2204,7 +2204,7 @@ int total_nodes;
 
 private:
     // Static method used for sorting the nodes.
-    static bool Compare( const GasNode node1, const GasNode node2 ) {
+    static bool Compare( const GasNode & node1, const GasNode & node2 ) {
         return ( node1.distance < node2.distance );
     }
 };

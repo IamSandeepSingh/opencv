@@ -120,7 +120,7 @@ bool NeuralGas::train( Scalar _input ) {
     double val = 0.0;
 
     for( int i=0; i<total_nodes; i++ ) {
-        NeuralGas::GasNode curr = nodes.at( i );
+        NeuralGas::GasNode & curr = nodes.at( i );
 
         curr.distance = 0.0;
 
@@ -149,7 +149,7 @@ bool NeuralGas::train( Scalar _input ) {
     double sqr_sigma = lambda0 * pow( ( lambdaT / lambda0 ), (float)iteration/max_iterations );
 
     for( int i=0; i<total_nodes; i++ ) {
-        NeuralGas::GasNode curr = nodes.at( i );
+        NeuralGas::GasNode & curr = nodes.at( i );
         curr.rank = -i;
 
         double h = exp( ((double)curr.rank) / sqr_sigma );
